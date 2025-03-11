@@ -1,11 +1,11 @@
-package unidad11.ejercicio1;
+package unidad11.ejercicio2;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Parking {
-    public static List<String> listaParking = new LinkedList<>();
+public class Parking_v2 {
+    public static LinkedList<String> listaParking = new LinkedList<>();
 
     public static void menu() {
         System.out.println("1. Aparcar");
@@ -20,7 +20,7 @@ public class Parking {
             return;
         }
 
-        listaParking.addFirst(matricula);
+        listaParking.push(matricula);
         System.out.println("Vehiculo aparcado con matricula: " + matricula);
     }
 
@@ -29,8 +29,8 @@ public class Parking {
             System.out.println("El parking esta vacio");
             return;
         } else
-            System.out.println("Desparacando el coche con matricula: " + listaParking.getFirst());
-        listaParking.removeFirst();
+            System.out.println("Desparacando el coche con matricula: " + listaParking.peek());
+        listaParking.poll();
     }
 
     public static void mostrarLista() {
