@@ -16,8 +16,8 @@ public class Parking_v2 {
 
     public static void aparcar(String matricula) {
         if (matricula == null || matricula.isBlank() || !matricula.matches("[0-9]{4}[A-Z]{3}")) {
-            System.err.println("Matricula incorrecta");
-            return;
+            throw new IllegalArgumentException(
+                    "AVISO: La matricula debe contener 4 numeros primero y luego 3 letras en mayuscula");
         }
 
         listaParking.push(matricula);
