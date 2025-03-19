@@ -1,6 +1,7 @@
 package unidad11.ejercicio3;
 
 import java.time.LocalDate;
+
 import java.util.Objects;
 
 public class Persona {
@@ -9,9 +10,9 @@ public class Persona {
     private String email;
     private LocalDate fechaNacimiento;
 
-
     /**
      * Constructor con los parametros pedidos
+     * 
      * @param nombre
      * @param telefono
      * @param email
@@ -22,6 +23,7 @@ public class Persona {
     public Persona(String nombre, String telefono, String email, int anyo, int mes, int dia) {
         this.nombre = nombre;
         this.telefono = telefono;
+
         this.email = email;
         this.fechaNacimiento = LocalDate.of(anyo, mes, dia);
     }
@@ -113,9 +115,5 @@ public class Persona {
         return "Persona [nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", fechaNacimiento="
                 + fechaNacimiento + "]\n";
     }
-    
-    
-    
 
-    
 }

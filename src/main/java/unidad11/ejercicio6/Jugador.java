@@ -7,7 +7,10 @@ public class Jugador {
     public Jugador(String nombre, double salario) {
         setNombre(nombre);
         setSalario(salario);
+<<<<<<< HEAD
         System.out.println("Jugador instanciado correctamente");
+=======
+>>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
     }
 
     public String getNombre() {
@@ -25,4 +28,13 @@ public class Jugador {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        return "Jugador [nombre=" + nombre + ", salario=" + salario + "]";
+    }
+
+>>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
 }
