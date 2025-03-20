@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class Main {
-     public static HashMap<String, Double> listaJugadores = new HashMap<>();
+    public static HashMap<String, Double> listaJugadores = new HashMap<>();
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class Main {
                 default -> System.out.println("Opcion incorrecta, introduce una opcion correcta");
             }
         } while (opcion != 6);
-         
+
         entrada.close();
     }
 
@@ -47,87 +47,68 @@ public class Main {
         System.out.print("Introduce el nombre de jugador: ");
         String nombre = entrada.nextLine();
         System.out.print("Introduce el salario del jugador: ");
-        double salario=entrada.nextInt();
-        if(listaJugadores.containsKey(nombre)){
+        double salario = entrada.nextDouble();
+        if (listaJugadores.containsKey(nombre)) {
             System.out.println("Jugador repetido");
             return false;
-        }
-        else
+        } else
             listaJugadores.put(nombre, salario);
-
-        double salario = entrada.nextDouble();
-
-        Jugador jugador = new Jugador(nombre, salario);
-        if (jugador == null)
-            return false;
-        if (!listaJugadores.containsKey(jugador))
-            listaJugadores.put(jugador, 1);
-        else
-            listaJugadores.put(jugador, (listaJugadores.get(jugador) + 1));
 
         return true;
 
     }
 
-    public static boolean eliminarJugador(){
+    public static boolean eliminarJugador() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
-        String nombre= entrada.nextLine();
+        String nombre = entrada.nextLine();
 
-        if(listaJugadores.remove(nombre)!=null){
+        if (listaJugadores.remove(nombre) != null) {
             System.out.println("Jugador eliminado");
             listaJugadores.remove(nombre);
             return true;
-        }else
+        } else
             System.out.println("Jugador no encontrado");
-        
-            return false;
+
+        return false;
     }
 
-    public static boolean consultarSalario(){
+    public static boolean consultarSalario() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
-        String nombre=entrada.nextLine();
-        double salario=listaJugadores.get(nombre);
-        if(salario!=0){
-            System.out.println("Su salario es de: "+salario);
+        String nombre = entrada.nextLine();
+        double salario = listaJugadores.get(nombre);
+        if (salario != 0) {
+            System.out.println("Su salario es de: " + salario);
             return true;
-        }
-        else
+        } else
             System.out.println("No se ha encontrado ese jugador");
 
         return false;
     }
 
-
-    public static boolean incrementarSalario(){
+    public static boolean incrementarSalario() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
-        String nombre=entrada.nextLine();
-        double salario=listaJugadores.get(nombre);
-        if(salario!=0){
-            listaJugadores.put(nombre, (int)salario*1.1);
+        String nombre = entrada.nextLine();
+        double salario = listaJugadores.get(nombre);
+        if (salario != 0) {
+            listaJugadores.put(nombre, (int) salario * 1.1);
             return true;
-        }else
+        } else
             System.out.println("No se ha encontrado jugador");
-            
-            return false;
+
+        return false;
     }
 
-    public static void mostrarPlantilla(){
-        Map.Entry<String,Double> jugador;
-        Iterator<Map.Entry<String,Double>> it = listaJugadores.entrySet().iterator();
+    public static void mostrarPlantilla() {
+        Map.Entry<String, Double> jugador;
+        Iterator<Map.Entry<String, Double>> it = listaJugadores.entrySet().iterator();
         while (it.hasNext()) {
-            jugador=(Entry<String, Double>)it.next();
-            System.out.println(jugador.getKey()+" cobra "+jugador.getValue());
-            
+            jugador = (Entry<String, Double>) it.next();
+            System.out.println(jugador.getKey() + " cobra " + jugador.getValue());
+
         }
 
     }
-
-
 }
-
-=======
-}
->>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
