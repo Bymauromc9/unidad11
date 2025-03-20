@@ -1,7 +1,6 @@
 package unidad11.ejercicio6;
 
 import java.util.HashMap;
-<<<<<<< HEAD
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -9,13 +8,6 @@ import java.util.Scanner;
 
 public class Main {
      public static HashMap<String, Double> listaJugadores = new HashMap<>();
-=======
-import java.util.Map;
-import java.util.Scanner;
-
-public class Main {
-    public static Map<Jugador, Integer> listaJugadores = new HashMap<>();
->>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -26,7 +18,6 @@ public class Main {
 
             switch (opcion) {
                 case 1 -> añadirJugador();
-<<<<<<< HEAD
                 case 2 -> eliminarJugador();
                 case 3 -> consultarSalario();
                 case 4 -> incrementarSalario();
@@ -35,11 +26,7 @@ public class Main {
                 default -> System.out.println("Opcion incorrecta, introduce una opcion correcta");
             }
         } while (opcion != 6);
-=======
-                default -> System.out.println("hola");
-            }
-        } while (opcion != 5);
->>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
+         
         entrada.close();
     }
 
@@ -49,11 +36,9 @@ public class Main {
         System.out.println("2. Eliminar jugador");
         System.out.println("3. Consultar salario del jugador");
         System.out.println("4. Incrementar un 10% el salario a un empleado");
-<<<<<<< HEAD
         System.out.println("5. Mostrar plantilla");
         System.out.println("6. Salir");
-=======
->>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
+
     }
 
     public static boolean añadirJugador() {
@@ -62,7 +47,6 @@ public class Main {
         System.out.print("Introduce el nombre de jugador: ");
         String nombre = entrada.nextLine();
         System.out.print("Introduce el salario del jugador: ");
-<<<<<<< HEAD
         double salario=entrada.nextInt();
         if(listaJugadores.containsKey(nombre)){
             System.out.println("Jugador repetido");
@@ -70,7 +54,7 @@ public class Main {
         }
         else
             listaJugadores.put(nombre, salario);
-=======
+
         double salario = entrada.nextDouble();
 
         Jugador jugador = new Jugador(nombre, salario);
@@ -80,12 +64,11 @@ public class Main {
             listaJugadores.put(jugador, 1);
         else
             listaJugadores.put(jugador, (listaJugadores.get(jugador) + 1));
->>>>>>> 1198b67c2d08e78417da1bea77166e65046de256
+
         return true;
 
     }
 
-<<<<<<< HEAD
     public static boolean eliminarJugador(){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
